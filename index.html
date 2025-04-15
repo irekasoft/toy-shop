@@ -188,16 +188,30 @@
     </div>
     <div class="offcanvas-body d-flex flex-column justify-content-between" style="height: 100%;">
       <div>
-        <ul class="list-unstyled">
-          <li class="py-2 d-flex justify-content-between align-items-center">
+        <ul class="list-unstyled" id="mobileMainMenu">
+          <li class="py-2 d-flex justify-content-between align-items-center menu-item" data-target="submenu-all-products">
             <span>All Products</span> <span>&#8250;</span>
           </li>
-          <li class="py-2 d-flex justify-content-between align-items-center">
+          <ul class="list-unstyled submenu d-none" id="submenu-all-products">
+            <li class="py-2 ps-4">Promotion</li>
+            <li class="py-2 ps-4">Pre-order</li>
+            <li class="py-2 ps-4">New Arrival</li>
+          </ul>
+          <li class="py-2 d-flex justify-content-between align-items-center menu-item" data-target="submenu-lego">
             <span>LEGO®Zone</span> <span>&#8250;</span>
           </li>
-          <li class="py-2 d-flex justify-content-between align-items-center">
+          <ul class="list-unstyled submenu d-none" id="submenu-lego">
+            <li class="py-2 ps-4">LEGO Sets</li>
+            <li class="py-2 ps-4">LEGO Accessories</li>
+          </ul>
+          <li class="py-2 d-flex justify-content-between align-items-center menu-item" data-target="submenu-modelcar">
             <span>Model Car Zone</span> <span>&#8250;</span>
           </li>
+          <ul class="list-unstyled submenu d-none" id="submenu-modelcar">
+            <li class="py-2 ps-4">Brands</li>
+            <li class="py-2 ps-4">Product</li>
+            <li class="py-2 ps-4">Themes</li>
+          </ul>
           <li class="py-2 d-flex justify-content-between align-items-center">
             <span>Anime Zone</span> <span>&#8250;</span>
           </li>
@@ -249,6 +263,16 @@
       if (window.innerWidth >= 992 && mobileMenu.classList.contains('show')) {
         bsOffcanvas.hide();
       }
+    });
+
+    document.querySelectorAll('.menu-item').forEach(item => {
+      item.addEventListener('click', function() {
+        // Hide all submenus
+        document.querySelectorAll('.submenu').forEach(sub => sub.classList.add('d-none'));
+        // Show the clicked submenu
+        const target = this.getAttribute('data-target');
+        document.getElementById(target).classList.toggle('d-none');
+      });
     });
 
   </script>
