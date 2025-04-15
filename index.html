@@ -190,25 +190,34 @@
       <div>
         <ul class="list-unstyled">
           <li class="py-2 d-flex justify-content-between align-items-center">
-            <span>New</span> <span>&#8250;</span>
+            <span>All Products</span> <span>&#8250;</span>
           </li>
           <li class="py-2 d-flex justify-content-between align-items-center">
-            <span>Women</span> <span>&#8250;</span>
+            <span>LEGO®Zone</span> <span>&#8250;</span>
           </li>
           <li class="py-2 d-flex justify-content-between align-items-center">
-            <span>Men</span> <span>&#8250;</span>
+            <span>Model Car Zone</span> <span>&#8250;</span>
           </li>
           <li class="py-2 d-flex justify-content-between align-items-center">
-            <span>Art of Living</span> <span>&#8250;</span>
+            <span>Anime Zone</span> <span>&#8250;</span>
           </li>
           <li class="py-2 d-flex justify-content-between align-items-center">
-            <span>Bags</span> <span>&#8250;</span>
+            <span>Toys Zone</span> <span>&#8250;</span>
           </li>
           <li class="py-2 d-flex justify-content-between align-items-center">
-            <span>Gifts</span> <span>&#8250;</span>
+            <span>Model Kit Zone</span> <span>&#8250;</span>
           </li>
           <li class="py-2 d-flex justify-content-between align-items-center">
-            <span>Craft in Motion</span> <span>&#8250;</span>
+            <span>TCG Zone</span> <span>&#8250;</span>
+          </li>
+          <li class="py-2 d-flex justify-content-between align-items-center">
+            <span>Game Zone</span> <span>&#8250;</span>
+          </li>
+          <li class="py-2 d-flex justify-content-between align-items-center">
+            <span>Blog</span> <span>&#8250;</span>
+          </li>
+          <li class="py-2 d-flex justify-content-between align-items-center">
+            <span>Q&amp;A</span> <span>&#8250;</span>
           </li>
         </ul>
       </div>
@@ -232,6 +241,15 @@
 
     var offcanvas = new bootstrap.Offcanvas(document.getElementById('mobileMenu'));
     // offcanvas.show();
+
+    let mobileMenu = document.getElementById('mobileMenu');
+    let bsOffcanvas = bootstrap.Offcanvas.getOrCreateInstance(mobileMenu);
+
+    window.addEventListener('resize', function() {
+      if (window.innerWidth >= 992 && mobileMenu.classList.contains('show')) {
+        bsOffcanvas.hide();
+      }
+    });
 
   </script>
 </body>
