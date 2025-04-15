@@ -151,6 +151,56 @@
     </div>
   </div>
 
+  <!-- Mobile Hamburger Button -->
+  <nav class="navbar navbar-light bg-light d-lg-none">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu" aria-controls="mobileMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand ms-2" href="#">
+        <img src="https://placehold.co/72x40?text=Logo" alt="Logo">
+      </a>
+    </div>
+  </nav>
+
+  <!-- Offcanvas Mobile Menu -->
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="mobileMenu" aria-labelledby="mobileMenuLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="mobileMenuLabel">Menu</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body d-flex flex-column justify-content-between" style="height: 100%;">
+      <div>
+        <ul class="list-unstyled">
+          <li class="py-2 d-flex justify-content-between align-items-center">
+            <span>New</span> <span>&#8250;</span>
+          </li>
+          <li class="py-2 d-flex justify-content-between align-items-center">
+            <span>Women</span> <span>&#8250;</span>
+          </li>
+          <li class="py-2 d-flex justify-content-between align-items-center">
+            <span>Men</span> <span>&#8250;</span>
+          </li>
+          <li class="py-2 d-flex justify-content-between align-items-center">
+            <span>Art of Living</span> <span>&#8250;</span>
+          </li>
+          <li class="py-2 d-flex justify-content-between align-items-center">
+            <span>Bags</span> <span>&#8250;</span>
+          </li>
+          <li class="py-2 d-flex justify-content-between align-items-center">
+            <span>Gifts</span> <span>&#8250;</span>
+          </li>
+          <li class="py-2 d-flex justify-content-between align-items-center">
+            <span>Craft in Motion</span> <span>&#8250;</span>
+          </li>
+        </ul>
+      </div>
+      <div>
+
+      </div>
+    </div>
+  </div>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script>
     // Example JS for cart badge (vanilla JS)
@@ -162,6 +212,9 @@
         badge.textContent = count + 1;
       });
     });
+
+    var offcanvas = new bootstrap.Offcanvas(document.getElementById('mobileMenu'));
+    offcanvas.show();
   </script>
 </body>
 </html>
