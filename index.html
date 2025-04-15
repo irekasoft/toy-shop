@@ -11,6 +11,11 @@
     .category-img { width: 100%; border-radius: 15px; margin-bottom: 1rem; }
     .new-arrival-card img { width: 100%; }
     .dropdown-menu-columns { min-width: 600px; }
+    @media (min-width: 992px) {
+      #mobileMenu {
+        display: none !important;
+      }
+    }
   </style>
 </head>
 <body>
@@ -38,7 +43,7 @@
   </nav>
 
   <!-- Main Menu -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom d-none d-lg-block">
     <div class="container-fluid">
       <ul class="navbar-nav flex-row flex-wrap">
         <li class="nav-item dropdown">
@@ -214,7 +219,8 @@
     });
 
     var offcanvas = new bootstrap.Offcanvas(document.getElementById('mobileMenu'));
-    offcanvas.show();
+    // offcanvas.show();
+
   </script>
 </body>
 </html>
